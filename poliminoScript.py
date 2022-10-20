@@ -35,12 +35,13 @@ def GeneralCheck(table,figures):
                     return False
     #Последняя проверка - действительно ли количество точек, занимаемое фигурами,
     #удовлетворяет "столу"
-    print(buffresp)
+    #print(buffresp)
     return (buffresp<=(table[0]*table[1]))
 
 #print(GeneralCheck(table1,resfigg))
 #print(len(resfigg))
 #Перечисление всевозможных фигур, которые могут сложиться без потерь
+#Работает только для П-обраных фигур
 def ListGoodFigs(figures):
     bufffig=()
     for tup in figures:
@@ -91,7 +92,7 @@ def mainfunc(table,figures):
     for fig in figures:
         if(fig not in goodfigs):
             badfigs+=(fig,)
-    print(badfigs)
+    #print(badfigs)
     for fig in goodfigs:
         if ((2,2)) in fig:
             buffi = fig[1]
@@ -109,7 +110,7 @@ def mainfunc(table,figures):
             #print(buffqq)
             goodfigs=buffqq
         totalbuffsgf+=buffsgf
-        print(totalbuffsgf)
+        #print(totalbuffsgf)
     tableS-=totalbuffsgf
     sbf=0
     for fig in badfigs:
